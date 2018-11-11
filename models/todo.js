@@ -7,11 +7,5 @@ var TodoSchema = new Schema({
   done: { type: Boolean, default: false }
 });
 
-TodoSchema
-.virtual('url')
-.get(function () {
-  return '/todos/' + this._id;
-});
-
 // Export model.
 module.exports = mongoose.model('Todo', TodoSchema);
